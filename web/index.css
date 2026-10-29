@@ -1,0 +1,162 @@
+
+* { box-sizing: border-box; }
+body { font-family: sans-serif; margin: 0; padding: 0; background: #1a1a1a; }
+
+.navbar-top {
+    background: #2962da;
+    padding: 10px 20px;
+}
+
+.search-bar {
+    background: white;
+    border-radius: 6px;
+    border: 2px solid black;
+    overflow: hidden;
+}
+.search-bar input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    outline: none;
+}
+.search-bar button {
+    border: none;
+    border-left: 2px solid black;
+    background: white;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+.btn-start {
+    font-family: "Press Start 2P", monospace;
+    font-size: 12px;
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: 2px solid black;
+    background: #f0f0f0;
+    cursor: pointer;
+    color: black;
+    white-space: nowrap;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.nav-icons-bottom {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav-icon {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.nav-icon-label {
+    color: white;
+    font-size: 11px;
+}
+
+.nav-menu {
+    background: #e1e1e1;
+    border-bottom: 1px solid #ccc;
+}
+.nav-menu .nav-link {
+    color: #222;
+    text-decoration: none;
+    font-size: 14px;
+}
+.nav-menu .nav-link:hover {
+    background: #d3d3d3;
+}
+
+.selection-tittle {
+    font-family: "Comic Sans MS", cursive;
+    text-align: center;
+    margin: 25px 0 15px;
+    color: #fff;
+}
+
+.game-row {
+    background: #2a2a2a;
+    border-radius: 6px;
+    padding: 25px;
+    margin-bottom: 10px;
+}
+
+.row.g-3 {
+    justify-content: flex-start !important;
+}
+
+.game-card {
+    text-align: center;
+    max-width: 170px;
+    margin: 0 auto;
+}
+.game-card img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+    transition: transform 0.15s ease;
+}
+.game-card img:hover {
+    transform: scale(1.04);
+}
+.game-tittle,
+.game-title {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ddd;
+}
+
+.badge-soon {
+    display: inline-block;
+    background: #d85a30;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+}
+
+footer {
+    background: #e1e1e1;
+    padding: 25px 30px;
+    margin-top: 20px;
+}
+
+.mas-info-toggle {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.footer-link {
+    color: #2962da;
+    text-decoration: none;
+    font-size: 14px;
+}
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.footer-brand {
+    background: #2962da;
+    color: white;
+    text-align: center;
+    font-family: "Comic Sans MS", cursive;
+    padding: 15px;
+    border-radius: 6px;
+}
+.footer-brand p {
+    margin: 0;
+}

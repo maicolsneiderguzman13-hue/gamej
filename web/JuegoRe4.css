@@ -1,0 +1,137 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 27/10/2026, 10:16:50 p. m.
+    Author     : maico
+*/
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+:root { --hero: clamp(300px, 46vh, 480px); --lado: clamp(24px, 6vw, 120px); }
+ 
+html, body { height: 100%; }
+ 
+body {
+    font-family: "Open Sans", Arial, sans-serif;
+    background: #fff;
+}
+ 
+/* La pagina ocupa todo el ancho y todo el alto de la ventana */
+.det-pagina {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+ 
+/* Imagen grande de arriba.
+   Con caratula vertical: se muestra la parte de arriba (se ven los personajes)
+   centrada, y a los lados la misma imagen difuminada.
+   Con banner ancho (columna banner): ocupa todo el ancho. */
+.det-hero {
+    position: relative;
+    height: var(--hero);
+    overflow: hidden;
+    background: #222;
+}
+.det-hero::before {
+    content: "";
+    position: absolute;
+    inset: -40px;
+    background: var(--foto) center / cover no-repeat;
+    filter: blur(22px) brightness(.85);
+}
+.det-foto {
+    position: relative;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.det-foto img { width: 100%; display: block; }
+ 
+/* Imagen horizontal (16:9) centrada, con los lados difuminados como en Requiem */
+.det-hero.pano .det-foto { aspect-ratio: 16 / 9; }
+.det-hero.pano .det-foto img { height: 100%; object-fit: cover; }
+ 
+.det-hero.ancho::before { display: none; }
+.det-hero.ancho .det-foto { aspect-ratio: auto; width: 100%; margin: 0; }
+.det-hero.ancho .det-foto img { height: 100%; object-fit: cover; object-position: center 22%; }
+.det-hero.ancho::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,.55) 0%, rgba(255,255,255,0) 45%);
+}
+ 
+/* Tarjeta gris que se monta sobre la imagen */
+.det-card {
+    position: absolute;
+    left: var(--lado);
+    top: calc(var(--hero) - 112px);
+    width: 471px;
+    height: 227px;
+    background: #c8ced8;
+    border: 2px solid #000;
+    padding: 34px 28px 0 28px;
+    z-index: 2;
+}
+.det-card h1 {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0 0 16px 0;
+    color: #000;
+}
+ 
+.det-rating { display: flex; align-items: center; gap: 12px; font-size: 12px; margin-bottom: 38px; }
+.det-nota { color: #1a1a5e; }
+.det-estrellas { font-size: 19px; letter-spacing: 2px; color: #000; }
+.det-estrellas .vacia { color: #8e96a3; }
+ 
+.det-compra { display: flex; align-items: center; justify-content: space-between; padding-right: 4px; }
+.det-compra form { margin: 0; }
+.det-boton {
+    width: 241px;
+    height: 42px;
+    background: #ff2d2d;
+    border: 2px solid #000;
+    font-size: 13px;
+    color: #000;
+    cursor: pointer;
+}
+.det-boton:hover { background: #e01f1f; }
+.det-boton[disabled] { background: #9aa1ad; cursor: not-allowed; }
+.det-precio { font-size: 18px; color: #000; }
+ 
+/* Datos a la derecha, debajo de la imagen */
+.det-info {
+    display: flex;
+    justify-content: space-around;
+    gap: 24px;
+    flex: 1;
+    min-height: 190px;
+    padding: 24px var(--lado) 0 calc(var(--lado) + 471px + 40px);
+}
+.det-dato { width: 140px; text-align: center; font-size: 12px; color: #000; }
+.det-dato svg { display: block; margin: 0 auto 8px; }
+ 
+.det-pie { height: 77px; background: #c8ced8; margin-top: auto; }
+ 
+.det-aviso {
+    background: #fde8e8; border: 1px solid #b43c3c; color: #8f2020;
+    font-size: 13px; font-weight: 600; padding: 10px 14px; margin: 18px;
+}
+ 
+@media (max-width: 860px) {
+    .det-card { position: relative; left: auto; top: auto; width: auto; height: auto;
+                margin: -60px 16px 0; padding: 24px 20px 24px; }
+    .det-hero { height: 260px; }
+    .det-rating { margin-bottom: 20px; }
+    .det-compra { flex-wrap: wrap; gap: 12px; }
+    .det-info { padding: 24px 16px; flex: none; flex-wrap: wrap; justify-content: center; min-height: 0; }
+}
+ 

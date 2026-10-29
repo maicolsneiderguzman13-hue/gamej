@@ -1,0 +1,119 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 27/10/2026, 11:12:12 a. m.
+    Author     : maico
+*/
+*{ box-sizing: border-box; margin: 0; padding: 0; }
+ 
+body {
+    font-family: "Open Sans", Arial, sans-serif;
+    background: #ffffff;
+    min-height: 100vh;
+}
+ 
+/* Barra azul clara con el logo */
+.reg-header {
+    background: #55aeff;
+    height: 128px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+}
+.reg-header img {
+    height: 100px;
+    width: auto;
+    display: block;
+}
+ 
+.reg-contenedor {
+    display: flex;
+    justify-content: center;
+    padding: 20px 16px 40px;
+}
+ 
+/* Caja del formulario con el logo de marca de agua */
+.reg-caja {
+    position: relative;
+    width: 305px;
+    background: #f3f4fb;
+    border: 2px solid #000;
+    padding: 34px 54px 22px;
+    overflow: hidden;
+    isolation: isolate;
+}
+.reg-caja::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../img/logo_Gamjod.jpeg") center 52% / 290px auto no-repeat;
+    opacity: .32;
+    z-index: -1;
+}
+ 
+.reg-caja h1 {
+    font-family: "Chewy", "Comic Sans MS", cursive;
+    font-weight: 400;
+    font-size: 25px;
+    margin: 0 0 14px -10px;
+    color: #000;
+}
+ 
+.reg-caja label {
+    display: block;
+    font-size: 12px;
+    margin: 14px 0 2px 4px;
+    color: #000;
+}
+ 
+.reg-caja input {
+    display: block;
+    width: 100%;
+    height: 34px;
+    border: 2px solid #000;
+    border-radius: 0;
+    background: #fff;
+    padding: 4px 8px;
+    font-size: 14px;
+}
+.reg-caja input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(41, 98, 218, .35);
+}
+ 
+.reg-boton {
+    display: block;
+    width: calc(100% + 22px);
+    margin: 14px 0 0 -11px;
+    height: 54px;
+    background: #c8ced8;
+    border: 2px solid #000;
+    font-family: "Chewy", "Comic Sans MS", cursive;
+    font-size: 21px;
+    color: #000;
+    cursor: pointer;
+}
+.reg-boton:hover { background: #b5bdca; }
+ 
+.reg-error {
+    background: #fde8e8;
+    border: 1px solid #b43c3c;
+    color: #8f2020;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 8px;
+    margin-bottom: 6px;
+}
+ 
+.reg-enlace {
+    margin-top: 14px;
+    font-size: 12px;
+    text-align: center;
+}
+.reg-enlace a { color: #1d4fb8; font-weight: 700; }
+ 
+@media (max-width: 380px) {
+    .reg-caja { width: 100%; padding: 28px 28px 20px; }
+}

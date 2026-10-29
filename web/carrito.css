@@ -1,0 +1,170 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 27/10/2026, 4:59:02 p. m.
+    Author     : maico
+*/
+body {
+    font-family: "Open Sans", Arial, sans-serif;
+    background: #55aeff;
+    min-height: 100vh;
+    padding: 24px 18px;
+}
+ 
+
+.car-panel {
+    position: relative;
+    max-width: 830px;
+    margin: 0 auto;
+    background: #f3f4fb;
+    padding: 28px 40px 40px;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 440px;
+}
+
+.car-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("Gamjod.jpeg") center 58% / 270px auto no-repeat;
+    opacity: .3;
+    z-index: -1;
+    pointer-events: none;
+}
+ 
+.car-titulo {
+    font-family: "Chewy", "Comic Sans MS", cursive;
+    font-weight: 400;
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 14px;
+    color: #000;
+}
+ 
+.car-volver {
+    display: inline-block;
+    font-size: 12px;
+    color: #1d4fb8;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+ 
+
+.car-cabecera,
+.car-fila {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr .8fr;
+    align-items: center;
+    border: 2px solid #000;
+}
+ 
+.car-cabecera {
+    background: #c8ced8;
+    height: 44px;
+    margin: 0 auto 14px;
+    width: 96%;
+    font-family: "Chewy", "Comic Sans MS", cursive;
+    font-size: 13px;
+    text-align: center;
+}
+.car-cabecera span:first-child { text-align: left; padding-left: 56px; }
+ 
+.car-fila {
+    width: 100%;
+    min-height: 100px;
+    margin-bottom: 18px;
+    padding: 10px 14px;
+}
+.car-fila:nth-of-type(odd) { background: #c8ced8; }
+ 
+
+.car-producto { display: flex; align-items: center; gap: 14px; }
+ 
+.car-quitar {
+    background: none;
+    border: 0;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    color: #000;
+    padding: 0 4px;
+}
+.car-quitar:hover { color: #b43c3c; }
+ 
+.car-img { width: 82px; height: 92px; object-fit: cover; }
+.car-nombre {
+    font-family: "Chewy", "Comic Sans MS", cursive;
+    font-size: 13px;
+    text-align: center;
+    max-width: 150px;
+    color: #000;
+}
+ 
+
+.car-cantidad { display: flex; align-items: center; justify-content: center; gap: 14px; }
+.car-cantidad form { display: inline; }
+.car-cantidad button {
+    background: none;
+    border: 0;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    color: #000;
+    width: 30px;
+}
+.car-cantidad button:hover { color: #2962da; }
+.car-num { font-size: 14px; color: #1d4fb8; min-width: 14px; text-align: center; }
+ 
+.car-precio { text-align: center; font-size: 14px; color: #000; }
+ 
+
+.car-pie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 96%;
+    margin: 6px auto 0;
+}
+.car-total { font-family: "Chewy", "Comic Sans MS", cursive; font-size: 22px; }
+.car-boton {
+    display: inline-block;
+    padding: 10px 22px;
+    background: #c8ced8;
+    border: 2px solid #000;
+    font-family: "Chewy", "Comic Sans MS", cursive;
+    font-size: 17px;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.car-boton:hover { background: #b5bdca; }
+ 
+
+.car-aviso {
+    background: #fff4d6;
+    border: 1px solid #c79100;
+    color: #6b4b00;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 12px;
+    margin: 0 auto 14px;
+    width: 96%;
+}
+.car-error { background: #fde8e8; border-color: #b43c3c; color: #8f2020; }
+.car-vacio { text-align: center; padding: 50px 0 20px; }
+.car-vacio p { font-family: "Chewy", "Comic Sans MS", cursive; font-size: 22px; margin-bottom: 18px; }
+ 
+
+@media (max-width: 640px) {
+    .car-panel { padding: 20px 12px 28px; }
+    .car-cabecera { display: none; }
+    .car-fila { grid-template-columns: 1fr; gap: 10px; justify-items: center; }
+    .car-producto { flex-direction: column; }
+}
+ 
